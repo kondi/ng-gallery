@@ -1,5 +1,6 @@
-import { Injectable, Optional } from '@angular/core';
+import { Inject, Injectable, Optional } from '@angular/core';
 
+import { CONFIG } from '../gallery.module';
 import { GalleryState, GalleryImage } from './gallery.state';
 import { GalleryConfig } from '../config/gallery.config';
 import { defaultState, defaultConfig } from '../config/gallery.default';
@@ -26,7 +27,7 @@ export class GalleryService {
   /** Gallery slide show player */
   player: Subject<number>;
 
-  constructor( @Optional() config: GalleryConfig) {
+  constructor( @Optional() @Inject(CONFIG) config: GalleryConfig) {
 
     /** Initialize the state */
     this.state = new BehaviorSubject<GalleryState>(defaultState);

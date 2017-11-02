@@ -52,7 +52,7 @@ const rollupNodeResolve = require('rollup-plugin-node-resolve');
 const rollupUglify = require('rollup-plugin-uglify');
 
 
-const LIBRARY_NAME = 'ng-gallery';
+const LIBRARY_NAME = 'ng5-gallery';
 
 const config = {
     allTs: 'src/**/!(*.spec).ts',
